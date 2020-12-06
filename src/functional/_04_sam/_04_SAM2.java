@@ -23,7 +23,7 @@ public class _04_SAM2 {
             Utilizamos el metodo default implementado para apoyar
             al proceso de la funcion notas.
         */
-       public default boolean aprovado(Double n1, Double n2){
+        default boolean aprovado(Double n1, Double n2){
            /*
                 Cuando instanciamos la interfaz le definimos el comportamiento a notas()
                 para poder utilizarlo libremente.
@@ -47,7 +47,12 @@ public class _04_SAM2 {
 
         System.out.println("Promedio estudiante 1: " + promedio1);
 
-        // Definimos el comportamiento del SAM de la interfaz que en este caso toma dos flotantes y los suma
+        /*
+            Definimos el comportamiento del SAM de la interfaz que en este caso toma dos flotantes y los suma
+            con esto ya cada vez que utilicemos op2.notas(n1, n2) se ejecutara la funcion que definimos al
+            instanciar, ya con los metodos default que pueden ser implementados podemos dar soporte a mas
+            funcionalidad sin conocer de antemano como sera la definicion de notas.
+        */
         estudianteOp2 op2 = Double::sum;
         // Vamos a utilizar directamente el metodo por default que se apoya en el SAM para saber si aprobo o no:
 
@@ -57,7 +62,6 @@ public class _04_SAM2 {
 
 
 }
-
 
 class Alumno{
     private Double nota1;
@@ -72,15 +76,7 @@ class Alumno{
         return nota1;
     }
 
-    public void setNota1(Double nota1) {
-        this.nota1 = nota1;
-    }
-
     public Double getNota2() {
         return nota2;
-    }
-
-    public void setNota2(Double nota2) {
-        this.nota2 = nota2;
     }
 }
