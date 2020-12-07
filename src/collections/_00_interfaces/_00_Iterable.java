@@ -24,6 +24,11 @@ public class _00_Iterable {
                 .hasNext() -> Evalua cierta condicion para saber si podemos seguir iterando.
                 .next() ->  Posee el valor siguiente de iterar.
         */
+
+        // El forEach es equivalente al fragmento:
+        //for (Iterator i=list.iterator(); i.hasNext(); )
+            //i.next();
+
         for(int i : tabla){
            System.out.println(i);
         }
