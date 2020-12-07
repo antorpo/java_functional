@@ -1,4 +1,5 @@
 package collections._00_interfaces;
+import java.util.Iterator;
 
 /*
     Interface Iterable<T>
@@ -8,8 +9,6 @@ package collections._00_interfaces;
     el cual puede recorrerse en un bucle (forEach), implementando el metodo abstracto iterator()
     el cual contiene informacion del objeto siguiente que puede o no existir.
 */
-
-import java.util.Iterator;
 
 public class _00_Iterable {
 
@@ -44,7 +43,7 @@ public class _00_Iterable {
         System.out.println("Hay mas elementos: " + tabla2.iterator().hasNext());
         /*
             Podemos seguir utilizando tabla2.iterator().next() y seguir sacando valores
-            pero seria saltar la logica del .hasNext() que hace nos indica hasta donde
+            pero seria saltar la logica del .hasNext() que nos indica hasta donde
             podemos llegar para no tener posibles errores de implementacion.
         */
     }
